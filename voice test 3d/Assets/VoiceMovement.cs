@@ -35,12 +35,12 @@ public class VoiceMovement : MonoBehaviour
 
     private void Up()
     {
-        transform.Translate(0, 1, 0);
+        transform.Translate(0, 0, 1);
     }
 
     private void Down()
     {
-        transform.Translate(0, -1, 0);
+        transform.Translate(0, 0, -1);
     }
 
     private void Right()
@@ -51,5 +51,25 @@ public class VoiceMovement : MonoBehaviour
     private void Left()
     {
         transform.Translate(-1, 0, 0);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            Left();
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Right();
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Up();
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Down();
+        }
     }
 }
