@@ -37,7 +37,8 @@ public class VoiceMovement : MonoBehaviour
 
     private void RecognisedSpeech(PhraseRecognizedEventArgs speech)
     {
-        Debug.Log(speech.text);
+        Debug.Log("Recognized Command: " + speech.text);
+
         actions[speech.text].Invoke();
     }
 
@@ -74,21 +75,25 @@ public class VoiceMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        // Allow keyboard input to start moving in a direction if not already moving
+        if (!isMoving)
         {
-            Left();
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Right();
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Up();
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Down();
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                Left();
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                Right();
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Up();
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Down();
+            }
         }
     }
 
