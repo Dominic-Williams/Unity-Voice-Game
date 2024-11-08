@@ -39,7 +39,11 @@ public class VoiceMovement : MonoBehaviour
     {
         Debug.Log("Recognized Command: " + speech.text);
 
-        actions[speech.text].Invoke();
+        // Invoke the command if not already moving
+        if (!isMoving)
+        {
+            actions[speech.text].Invoke();
+        }
     }
 
     private void Up()
