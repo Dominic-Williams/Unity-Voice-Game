@@ -99,16 +99,21 @@ public class VoiceMovement : MonoBehaviour
                 Down();
             }
         }
+
+        if (rb.velocity == Vector3.zero)
+        {
+            isMoving = false;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         // Stop the object on collision
-        if (isMoving)
+        /*if (isMoving)
         {
             rb.velocity = Vector3.zero;
             isMoving = false;
             Debug.Log("Collision detected with " + collision.gameObject.name);
-        }
+        }*/
     }
 }
