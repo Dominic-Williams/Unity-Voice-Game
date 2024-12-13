@@ -40,8 +40,13 @@ public class TextToSpeech : MonoBehaviour
             var clip = DownloadHandlerAudioClip.GetContent(www);
 
             audioSource.clip = clip;
-            audioSource.Play();
+            //audioSource.Play();
         }
+    }
+
+    public void PlayAudio()
+    {
+        audioSource.Play();
     }
 
     private void WriteIntoFile(Stream stream)
