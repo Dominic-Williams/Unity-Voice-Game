@@ -16,7 +16,7 @@ public class TextToSpeech : MonoBehaviour
     // Start is called before the first frame update
     private async void Start()
     {
-        var credentials = new BasicAWSCredentials("AKIASFIXCZYLDHCWU4EA", "ki552IkzrdY0ihRgNPw5JW3/9engZGxm9HeCqLpa");
+        var credentials = new BasicAWSCredentials("", ""); // copy access key and secret key here respectively
         var client = new AmazonPollyClient(credentials, RegionEndpoint.EUWest1);
 
         var request = new SynthesizeSpeechRequest()
